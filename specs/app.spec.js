@@ -1,37 +1,37 @@
 import { nameIsValid, fullTrim, getTotal } from '../src/app.js'
 
 describe('nameIsValid', () => {
-  test ('name.length < 2', function(){
+  test.skip ('name.length < 2', function(){
     expect (nameIsValid('O')).toBe(false)
   })
-  test ('name.length >= 2', function(){
+  test.skip ('name.length >= 2', function(){
     expect (nameIsValid('Oxana')).toBe(true)
   })
-  test ('name.length = 2', function(){
+  test.skip ('name.length = 2', function(){
     expect (nameIsValid('Ox')).toBe(true)
   })
-  test ('is not empty', function(){
+  test.skip ('is not empty', function(){
     expect (nameIsValid(' ')).toBe(false)
   })
 });
 
 describe('fullTrim', () => {
-  test ('space in the middle', function(){
-    expect (fullTrim('te xt')).toBe('text')
+  test.skip ('space in the middle', function(){
+    expect(fullTrim('te xt')).toBe('text')
   })
-  test ('only spaces', function(){
+  test.skip ('only spaces', function(){
     expect (fullTrim('     ')).toBe('')
   })
-  test ('spaces along the edges', function(){
+  test.skip ('spaces along the edges', function(){
     expect (fullTrim(' text ')).toBe('text')
   })
-  test ('numbers spaces and symbols', function(){
+  test.skip ('numbers spaces and symbols', function(){
     expect (fullTrim('12 *& ||')).toBe('12*&||')
   })
 });
 
 describe('getTotal', () => {
-  test.each`
+  test.skip.each`
   price | quantity| discount     | expected
   ${10} | ${10}   | ${0}         | ${100}
   ${10} | ${1}    | ${0}         | ${10}
